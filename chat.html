@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{background-image: url('ai.png');
+                 background-repeat: no-repeat;
+                 background-size: cover;
+                 background-attachment: fixed;}
+            h1{text-align: center;
+               color: rgb(255, 255, 255);
+               text-decoration: underline;
+               }
+            h2{text-align: center;
+               color: rgb(255, 255, 255);
+               }
+            input{bottom: 5%;
+                 left: 5%;
+                  display: block;
+                  position: fixed;
+                  width: 80%;
+                  height: 7%;}
+            button{bottom: 5%;
+                  left: 88%;
+                  display: block;
+                  position: fixed;
+                  width: 10%;
+                  height: 7%;}
+            #prvni{left: 85%;
+                   font-size: 200%;
+                   position: fixed;
+                   background-color: yellowgreen;
+                   width: 12%;
+                   max-height: 10%;
+                   }
+            #druhy{position: fixed;
+                   top: 33%;
+                   background-color: lightseagreen;}
+            #treti{left: 85%;
+                   top: 45%;
+                   font-size: 200%;
+                   position: fixed;
+                   background-color: yellowgreen;
+                   width: 12%;
+                   max-height: 5%}
+            #ctvrty{position: fixed;
+                    top: 60%;
+                    background-color: lightseagreen;}
+            #paty{left: 85%;
+                  top: 71%;
+                  font-size: 200%;
+                  position: fixed;
+                  background-color: yellowgreen;
+                  width: 12%;
+                  max-height: 5%}
+            #sesty{position: fixed;
+                   top: 82%;
+                   background-color: lightseagreen;}
+        </style>
+    </head>
+    <body>
+        <h1>ChatGPT 8.0</h1>
+        <h2>S čím potřebuješ pomoci?</h2>
+        <p id="prvni"></p>
+        <p id="druhy"></p>
+        <p id="treti"></p>
+        <p id="ctvrty"></p>
+        <p id="paty"></p>
+        <p id="sesty"></p>
+        <input id="dotaz">
+        <button onclick="odešli()" id="tlacitko">↑</button>
+        <script>
+            let pocitadlo = 0
+             function odešli(){
+                pocitadlo = pocitadlo + 1
+                
+
+                let a = document.getElementById("dotaz").value;
+                
+
+                if(pocitadlo == 1){
+                document.getElementById("prvni").textContent=a;
+                if(a == "ahoj"||a == "čau"||a == "nazdar"){document.getElementById("druhy").textContent="nazdar, co chceš?"}
+                else{document.getElementById("druhy").textContent="na zprávu "+a+" nebudu odpovídat, protože je ohrožující pro mé servery v Severní Korei. Co by na tebe asi řekl kimčongun, lumpe jeden"}
+            
+            }
+            if(pocitadlo == 2){
+                document.getElementById("treti").textContent=a;
+                document.getElementById("ctvrty").textContent="O nebezpečných a vulgárních tématech jeko je: "+a+", si nebudeme povídat. Chceš pomoci s něčím jiným?"}
+                if(a == "nic"||a == "hovno"){document.getElementById("ctvrty").textContent="v tom případě jdu spát!";}
+            
+               if(pocitadlo == 3){
+                document.getElementById("paty").textContent=a;
+                 if(a == "co?"||a == "co"){document.getElementById("sesty").textContent="nic tyvole";}
+                  else if(a == "ne"){document.getElementById("sesty").textContent="tak proč si se mnou píšeš???";}
+                else{document.getElementById("sesty").textContent="Ne, o politice se bavit nebudem, ani o politikovi jménem "+a+" . Máš jiné téma?"}
+            
+            }
+            if(pocitadlo == 4){alert('DOŠEL TI LIMIT PRO CHATGPT 8.0');
+            document.getElementById("tlacitko").textContent="Vyzkoušet starší model";return}
+            if(pocitadlo == 5){window.location.href="https://www.chatgpt.com"}
+            }
+        </script>
+    </body>
+</html>
